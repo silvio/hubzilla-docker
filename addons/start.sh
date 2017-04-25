@@ -16,9 +16,7 @@ fi
 
 
 
-IP="$(ip a show "eth0" | grep 'inet' | cut -d/ -f1 | awk '{print $2}')"
-
-sed -i "s/###SERVERNAME###/${IP}/" /etc/nginx/conf.d/default.conf
+sed -i "s/###SERVERNAME###/${SERVERNAME}/" /etc/nginx/conf.d/default.conf
 
 nginx
 php-fpm

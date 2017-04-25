@@ -11,8 +11,9 @@ ADD addons/start.sh /start.sh
 # useable for any git references
 ENV HUBZILLAVERSION 2.2
 
-# cron
 ENV HUBZILLAINTERVAL 10
+env SERVERNAME 127.0.0.1
+
 
 RUN set -ex \
     && apk update \

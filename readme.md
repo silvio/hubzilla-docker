@@ -12,5 +12,5 @@ Dockerimage for <https://hubzilla.org>.
 # start
 
 ```bash
-$ docker run --link mysqlserver -v ${PWD}/hubzilladata:/data -d silviof/hubzilla-docker
+$ docker run --link mysqlserver -e SERVERNAME=hub.port1024.net -v ${PWD}/hubzilladata:/data -d silviof/hubzilla-docker
 ```
