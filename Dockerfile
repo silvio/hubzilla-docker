@@ -9,7 +9,7 @@ ADD addons/nginx-server.conf /etc/nginx/conf.d/default.conf
 ADD addons/start.sh /start.sh
 
 # useable for any git references
-ENV HUBZILLAVERSION 2.2
+ENV HUBZILLAVERSION 2.4
 
 ENV HUBZILLAINTERVAL 10
 env SERVERNAME 127.0.0.1
@@ -34,6 +34,7 @@ RUN set -ex \
         php5-pdo_pgsql \
         php5-openssl \
         php5-xml \
+        php5-zip \
     && mkdir -p /run/nginx /hubzilla \
     && curl https://codeload.github.com/redmatrix/hubzilla/tar.gz/${HUBZILLAVERSION} | tar -xz --strip-components=1 -C /hubzilla -f - \
     && chown nginx:nginx -R /hubzilla \
